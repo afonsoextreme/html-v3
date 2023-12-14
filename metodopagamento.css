@@ -1,0 +1,16 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+        #paymentOptions {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .paymentLogo {
+            width: 100px; /* Ajuste o tamanho conforme necessário */
+            cursor: pointer;
+        }

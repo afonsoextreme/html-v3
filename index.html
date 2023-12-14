@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Bilheteira de Concertos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav a {
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        /* Adicionando estilos para as salas */
+        .venue-details {
+            display: none;
+        }
+
+        .venue-details li {
+            background-color: #ddd;
+            margin: 10px 0;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        // Script específico para a página de Index
+        function showEventsIndex(monthId) {
+            // Oculta todos os detalhes do evento
+            var eventDetails = document.querySelectorAll('.event-details');
+            eventDetails.forEach(function (event) {
+                event.style.display = 'none';
+            });
+
+            // Mostra os detalhes do evento do mês clicado
+            var selectedEvent = document.getElementById(monthId);
+            if (selectedEvent) {
+                selectedEvent.style.display = 'block';
+            }
+
+            // Oculta todos os detalhes da sala
+            var venueDetails = document.querySelectorAll('.venue-details');
+            venueDetails.forEach(function (venue) {
+                venue.style.display = 'none';
+            });
+
+            // Mostra os detalhes da sala do mês clicado
+            var selectedVenue = document.getElementById('venue-' + monthId);
+            if (selectedVenue) {
+                selectedVenue.style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Bilheteira de Concertos</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="agenda.html">Agenda</a></li>
+            <!-- Adicione o link para "Salas" apontando para Salas1.html -->
+            <li><a href="Sala.html">Salas</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <!-- Adicione uma lista para mostrar as salas disponíveis -->
+        <ul class="venue-details">
+            <li id="sala-coliseu" class="event-details">
+                <h2>Coliseu</h2>
+                <p>Local: Coliseu</p>
+                <p>Capacidade: 5000 pessoas</p>
+                <!-- Adicione outras informações sobre o Coliseu, se necessário -->
+            </li>
+            <li id="sala-altice-arena" class="event-details">
+                <h2>Altice Arena</h2>
+                <p>Local: Altice Arena</p>
+                <p>Capacidade: 20000 pessoas</p>
+                <!-- Adicione outras informações sobre a Altice Arena, se necessário -->
+            </li>
+            <!-- Adicione outras salas aqui -->
+        </ul>
+
+        <!-- Adicione a lista de eventos existente aqui -->
+        <ul class="months">
+            <!-- Conteúdo da Agenda existente permanece inalterado -->
+        </ul>
+    </section>
+
+    <!-- Seus scripts JavaScript aqui -->
+</body>
+</html>
